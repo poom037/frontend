@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Slider2 from './slider2.jpg';
+//import Slider2 from './slider2.jpg';
 
 export default function Carousel() {
   return (
@@ -9,7 +9,7 @@ export default function Carousel() {
           <Image src='./slider1.jpg' className="d-block w-100" alt="Slide 1" width={900} height={900} />
         </div>
         <div className="carousel-item">
-          <Image src={Slider2} className="d-block w-100" alt="Slide 2" width={900} height={900} />
+          <Image src='./slider2.jpg' className="d-block w-100" alt="Slide 2" width={900} height={900} />
         </div>
       </div>
       <button
