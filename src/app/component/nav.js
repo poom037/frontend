@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Slider10 from "../../../public/Slider10.png";
+import Slider10 from "/Slider10.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {

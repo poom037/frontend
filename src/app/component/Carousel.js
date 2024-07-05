@@ -1,6 +1,6 @@
 import Image from "next/image"
-import Slider1 from '../../../public/slider1.jpg'
-import Slider2 from '../../../public/slider2.jpg'
+import Slider1 from '/slider1.jpg'
+import Slider2 from '/slider2.jpg'
 export default function Carousel() {
 return (
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">

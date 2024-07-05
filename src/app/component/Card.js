@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Slider5 from "../../../public/Slider5.jpg";
-import Slider6 from "../../../public/Slider6.png";
-import Slider7 from "../../../public/Slider7.jpg";
+import Slider5 from "/Slider5.jpg";
+import Slider6 from "/Slider6.png";
+import Slider7 from "/Slider7.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Carousel() {
