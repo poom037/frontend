@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-//import Slider10 from "/Slider10.png";
+import Slider10 from "../../../public/slider10.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {
@@ -9,7 +9,8 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link href="/" className="navbar-brand">
-            <Image src="./slider10.jpg" alt="Logo" width={80} height={80} className="d-inline-block align-text-top" />
+            <Image src={Slider10} alt="Logo" width={80} height={80} className="d-inline-block align-text-top" />
+            <Image src="" alt="Logo" width={80} height={80} className="d-inline-block align-text-top" />
           </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
