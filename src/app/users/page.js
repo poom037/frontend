@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function Page() {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
     async function getUsers() {
       try {
@@ -22,8 +23,9 @@ export default function Page() {
  
   getUsers()
   const interval  = setInterval(getUsers, 1000);
-  return () => clearInterval(interval );
+  return () => clearInterval(interval);
 }, []);
+
 
   return (
     <>
@@ -52,8 +54,8 @@ export default function Page() {
               <td className='text-center'>{item.id}</td>
               <td>{item.firstname}</td>
               <td>{item.lastname}</td>
-              <td><Link href="#" className="btn btn-warning">Edit</Link></td>
-              <td><Link href="#" className="btn btn-danger">Del</Link></td>
+              <td><Link href={`/users/edit/${item.id}`} className="btn btn-warning">Edit</Link></td>
+              <td><Link href={`/users/del/${item.id}`} className="btn btn-danger">Del</Link></td>
             </tr>
           ))}
         </tbody>
