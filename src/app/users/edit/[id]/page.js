@@ -35,7 +35,7 @@ export default function Page({params}) {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('http://localhost:3001/api/users', {
+    const res = await fetch('http://localhost:3000/api/users', {
       method: 'PUT',
       headers: {
         Accept : 'application/json',
@@ -53,8 +53,8 @@ export default function Page({params}) {
     <div className="container">
     <div class="card">
   <div class="card-header bg-success text-white">
-    Edit from
-    {/* Edit Form {JSON.stringify(items)} */}
+            Edit Form
+            {/* {JSON.stringify(items)} */}
   </div>
   <div class="card-body">
 
@@ -89,7 +89,7 @@ export default function Page({params}) {
     </div>
   </div>
   <div className="col-12">
-    <button type="submit" className="btn btn-success"><i class="bi bi-box-arrow-right"></i> UPDATE</button>
+    <button type="submit" className="btn btn-success"><i class="bi bi-box-arrow-right"></i> Update</button>
   </div>
             </form>
     ))}
