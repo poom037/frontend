@@ -12,7 +12,7 @@ export default function Page({ params }) {
   useEffect(() => {
     async function getUser() {
       try {
-        const res = await fetch(`http://localhost:3000/api/users/${id}`); // Update URL
+        const res = await fetch(`http://backend-gamma-fawn.vercel.app/api/users/${id}`); // Update URL
         if (!res.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -34,7 +34,7 @@ export default function Page({ params }) {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:3000/api/users', { // Update URL
+      const res = await fetch('http://backend-gamma-fawn.vercel.app/api/users', { // Update URL
         method: 'PUT',
         headers: {
           Accept: 'application/json',
