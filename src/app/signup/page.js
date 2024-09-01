@@ -11,7 +11,7 @@ export default function Page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('http://backend-gamma-fawn.vercel.app/api/users', {
+    const res = await fetch('http://localhost:3000/api/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
