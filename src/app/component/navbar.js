@@ -5,30 +5,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../../public/slider5.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    const handleAuthChange = (event) => {
-      if (event.detail && event.detail.isLoggedIn !== undefined) {
-        setIsLoggedIn(event.detail.isLoggedIn);
-      }
+    // Function to check login status
+    const checkLoginStatus = () => {
+      const token = localStorage.getItem('authToken');
+      setIsLoggedIn(!!token);
     };
 
-    window.addEventListener('authChange', handleAuthChange);
+    // Check login status on component mount
+    checkLoginStatus();
 
+    // Add event listener for localStorage changes
+    window.addEventListener('storage', checkLoginStatus);
+
+    // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener('authChange', handleAuthChange);
+      window.removeEventListener('storage', checkLoginStatus);
     };
   }, []);
 
   const handleLogout = () => {
-    // Clear authentication tokens or user data here
-    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
     setIsLoggedIn(false);
-    // Dispatch event to inform other components
-    window.dispatchEvent(new CustomEvent('authChange', { detail: { isLoggedIn: false } }));
+    router.push('/signin'); // Redirect to signin page
   };
 
   return (
