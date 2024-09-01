@@ -17,7 +17,7 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const res = await fetch('https://backend-gamma-fawn.vercel.app/api/login', {
+      const res = await fetch('http://backend-gamma-fawn.vercel.app/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
