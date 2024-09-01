@@ -26,17 +26,19 @@ export default function LoginPage() {
       });
 
       if (!res.ok) {
-        const { message } = await res.json();
+        const text = await res.text(); // รับข้อมูลเป็นข้อความดิบเพื่อตรวจสอบ
+        console.error('Response text:', text);
+        const { message } = JSON.parse(text); // แปลงข้อความเป็น JSON อย่างปลอดภัย
         throw new Error(message || 'Login failed');
       }
 
       const { token } = await res.json();
       localStorage.setItem('authToken', token);
       
-      // Trigger storage event to update Navbar
+      // กระตุ้นเหตุการณ์ storage เพื่ออัปเดต Navbar
       window.dispatchEvent(new Event('storage'));
 
-      // Redirect to home page
+      // เปลี่ยนเส้นทางไปยังหน้า home
       router.push('/users');
     } catch (error) {
       console.error('Error during login:', error);
