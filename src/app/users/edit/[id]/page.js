@@ -34,7 +34,7 @@ export default function Page({ params }) {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:3000/api/users', { // Update URL
+      const res = await fetch('https://backend-gamma-fawn.vercel.app/api/users', { // Update URL
         method: 'PUT',
         headers: {
           Accept: 'application/json',
